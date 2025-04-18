@@ -4,7 +4,7 @@ create table CURSO(
     CODCURSO char(3) not null,
     NOME char(30),
     MENSALIDADE decimal(6,2),
-	primary key(CODCURSO)
+    primary key(CODCURSO)
 );
 create table ALUNO(
     RA char(9) not null primary key,
