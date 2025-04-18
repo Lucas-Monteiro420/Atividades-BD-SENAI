@@ -46,27 +46,27 @@ FOREIGN KEY (produto_id) REFERENCES produto(produto_id)
 INSERT INTO 
 	cliente (nome, cpf, email, telefone)
     VALUES 
-    ('Kris Lourrany de Souza Lima','70421985773','krislola@gmail.com','31997393176'),
-    ('Cóquis Ácaros Panetonni','61530749809','coquisfofinha@gmail.com','35997583204'),
+	('Kris Lourrany de Souza Lima','70421985773','krislola@gmail.com','31997393176'),
+	('Cóquis Ácaros Panetonni','61530749809','coquisfofinha@gmail.com','35997583204'),
 	('Cléber Ribeiro Silva','83016492501','cleber420@gmail.com','98997493214'),
-    ('Vladimir Ilitch Lênin','68325947125','lenin.vladimir@gmail.com','55997384560'),
-    ('João da Silva','31907418892','joaodasilva@gmail.com','51997401936'),
+	('Vladimir Ilitch Lênin','68325947125','lenin.vladimir@gmail.com','55997384560'),
+	('João da Silva','31907418892','joaodasilva@gmail.com','51997401936'),
 	('Carlos Marques Mange','42815670283','carlosmarquesdacapital@gmail.com','19997412873');
 
 INSERT INTO 
 	produto (nome, preco, estoque)
     VALUES 
-    ('Processador Intel i3', 299.00, 35),
-    ('Placa NVIVIDA RTX', 429.00, 20),
-    ('Hyper X 16GB RAM', 399.00, 25),
-    ('Monitor Philco 42 polegadas', 999.00, 50),
-    ('Mouse gamer Python', 99.00, 58);
+	('Processador Intel i3', 299.00, 35),
+	('Placa NVIVIDA RTX', 429.00, 20),
+	('Hyper X 16GB RAM', 399.00, 25),
+	('Monitor Philco 42 polegadas', 999.00, 50),
+	('Mouse gamer Python', 99.00, 58);
  
 INSERT INTO 
 	vendedor (nome, email, salario)
     VALUES 
-    ('Carlos Marighella', 'carlosmarighela@empresa.com', 4100.00),
-    ('Carlos Lamarca', 'carloslamarca@empresa.com', 3450.00),
+	('Carlos Marighella', 'carlosmarighela@empresa.com', 4100.00),
+	('Carlos Lamarca', 'carloslamarca@empresa.com', 3450.00),
 	('Rosa Luxemburgo', 'rosaluxemburgo@empresa.com', 4800.00),
 	('Mauricio Grabois','mauriciograbois@empresa.com', 4300.00),
 	('George Lucas', 'georgelucas@empresa.com', 9000.00);
@@ -74,23 +74,22 @@ INSERT INTO
 INSERT INTO 
 	venda (cliente_id, vendedor_id, data_venda, total)
     VALUES 
-    (1, 1, '2025-07-10', 2497.05),
-    (2, 2, '2025-08-12', 635.00),
+	(1, 1, '2025-07-10', 2497.05),
+	(2, 2, '2025-08-12', 635.00),
 	(3, 4, '2025-10-14', 559.00),
 	(4, 3, '2023-09-15', 899.00),
 	(5, 5, '2024-04-16', 1199.00),
-    (6, 5, '2024-05-02', 99.00);
-
+	(6, 5, '2024-05-02', 99.00);
 
 INSERT INTO 
-	itemvenda (venda_id, produto_id, quantidade, preco_unitario)
+	venda (cliente_id, vendedor_id, data_venda, total)
     VALUES 
-    (1, 1, 5, 299.00),
-    (2, 3, 1, 429.00),
-	(3, 2, 1, 399.00),
-	(4, 4, 1, 999.00 ),
-	(5, 2, 3, 299.00),
-    (6, 5, 1, 99.00);
+	(1, 1, '2025-07-10', 1495.00),  
+	(2, 2, '2025-08-12', 429.00),    
+	(3, 4, '2025-10-14', 399.00),    
+	(4, 3, '2023-09-15', 999.00),    
+	(5, 5, '2024-04-16', 897.00),    
+	(6, 5, '2024-05-02', 99.00);     
     
 -- Nomes dos cliente cadastrados --
 SELECT*FROM cliente;
