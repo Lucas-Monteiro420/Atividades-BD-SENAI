@@ -50,7 +50,7 @@ insert into DISCIPLINA values
     ('BDOO','BANCO DE DADOS O OBJETOS','SI',4),
     ('BDS','SISTEMAS DE BANCO DE DADOS','AS', 4),
     ('DBD','DESENVOLVIMENTO BANCO DE DADOS','SI',6),
-    ('IBD','INTRODUC AO A BANCO DE DADOS','AS',2);
+    ('IBD','INTRODUCAO A BANCO DE DADOS','AS',2);
 
 insert into BOLETIM values 
     ('123','BDS',10),
