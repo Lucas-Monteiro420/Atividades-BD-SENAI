@@ -20,9 +20,9 @@ CREATE TABLE funcionarios (
 );
 
 INSERT INTO departamento VALUES
-(111, 'Filosofia', '2° andar'),
-(112, 'Análise de Processos', '1° andar'),
-(113, 'Contabilidade', '3° andar');
+    (111, 'Filosofia', '2° andar'),
+    (112, 'Análise de Processos', '1° andar'),
+    (113, 'Contabilidade', '3° andar');
 
 INSERT INTO funcionarios VALUES (001, 'Lucas Monteiro', 'Filósofo', 5000.00, '2021-03-01', 111);
 INSERT INTO funcionarios VALUES (002, 'Kris Lourrany', 'Analista de Processos', 10000.00, '2021-02-01', 112);
