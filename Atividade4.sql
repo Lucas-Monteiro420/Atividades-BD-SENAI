@@ -3,71 +3,71 @@ USE GestaoVendas;
 
 
 CREATE TABLE cliente (
-cliente_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(100),
-cpf CHAR(11),
-email VARCHAR(100),
-telefone VARCHAR(15)
+	cliente_id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(100),
+	cpf CHAR(11),
+	email VARCHAR(100),
+	telefone VARCHAR(15)
 );
 
 CREATE TABLE produto (
-produto_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(100),
-preco DECIMAL(10,2),
-estoque INT
+	produto_id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(100),
+	preco DECIMAL(10,2),
+	estoque INT
 );
 
 CREATE TABLE vendedor (
-vendedor_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(100),
-email VARCHAR(100),
-salario DECIMAL(10,2)
+	vendedor_id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(100),
+	email VARCHAR(100),
+	salario DECIMAL(10,2)
 );
 
 CREATE TABLE venda (
-venda_id INT PRIMARY KEY AUTO_INCREMENT,
-cliente_id INT,
-vendedor_id INT,
-data_venda DATE,
-total DECIMAL(10,2),
-FOREIGN KEY (cliente_id) REFERENCES cliente(cliente_id),
-FOREIGN KEY (vendedor_id) REFERENCES vendedor(vendedor_id)
+	venda_id INT PRIMARY KEY AUTO_INCREMENT,
+	cliente_id INT,
+	vendedor_id INT,
+	data_venda DATE,
+	total DECIMAL(10,2),
+	FOREIGN KEY (cliente_id) REFERENCES cliente(cliente_id),
+	FOREIGN KEY (vendedor_id) REFERENCES vendedor(vendedor_id)
 );
 
 CREATE TABLE itemvenda (
-item_id INT PRIMARY KEY AUTO_INCREMENT,
-venda_id INT,
-produto_id INT,
-quantidade INT,
-preco_unitario DECIMAL(10,2),
-FOREIGN KEY (venda_id) REFERENCES venda(venda_id),
-FOREIGN KEY (produto_id) REFERENCES produto(produto_id)
+	item_id INT PRIMARY KEY AUTO_INCREMENT,
+	venda_id INT,
+	produto_id INT,
+	quantidade INT,
+	preco_unitario DECIMAL(10,2),
+	FOREIGN KEY (venda_id) REFERENCES venda(venda_id),
+	FOREIGN KEY (produto_id) REFERENCES produto(produto_id)
 );
 
 DELIMITER $$
-CREATE FUNCTION CalcularSalarioAnual(SalarioMensal DECIMAL(10,2))
-RETURNS DECIMAL(10,2)
-DETERMINISTIC
-BEGIN 
-    DECLARE SalarioAnual DECIMAL(10,2);
-    SET SalarioAnual = SalarioMensal * 13;
-    RETURN SalarioAnual;
-END $$
+	CREATE FUNCTION CalcularSalarioAnual(SalarioMensal DECIMAL(10,2))
+	RETURNS DECIMAL(10,2)
+	DETERMINISTIC
+	BEGIN 
+	    DECLARE SalarioAnual DECIMAL(10,2);
+	    SET SalarioAnual = SalarioMensal * 13;
+	    RETURN SalarioAnual;
+	END $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE PROCEDURE ListarFuncionarios()
-BEGIN
-	SELECT
-		vendedor_id,
-		nome,
-		email,
-		salario
-	FROM
-		vendedor
-	ORDER BY
-		nome;
-END //
+	CREATE PROCEDURE ListarFuncionarios()
+	BEGIN
+		SELECT
+			vendedor_id,
+			nome,
+			email,
+			salario
+		FROM
+			vendedor
+		ORDER BY
+			nome;
+	END 
 DELIMITER ;
 
 DELIMITER $$
